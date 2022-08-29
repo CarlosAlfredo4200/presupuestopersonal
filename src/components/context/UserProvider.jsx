@@ -1,24 +1,18 @@
-import React, { useState } from "react";
+ 
+import { useForm } from "../hooks/useForm";
+import { useIsValid } from "../hooks/useIsValid";
 import { UserContext } from "./UserContext";
 
 export const UserProvider = ({ children }) => {
-  const [presupuesto, setPresupuesto] = useState(0);
-  const [mensaje, setMensaje] = useState("");
 
-  const handlepresupuesto = (e) => {
-    e.preventDefault();
-    setPresupuesto(e.target.value);
-  };
+    const {presupuesto,
+        setPresupuesto,
+        mensaje,
+        setMensaje,
+        handleSubmit,
+        handlepresupuesto,} = useForm();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    if (!presupuesto || presupuesto < 0) {
-      setMensaje("No es un presupuesto valido");
-      return;
-    }
-    setMensaje("");
-  };
+    const { isValidPresupuesto, setIsValidPresupuesto} = useIsValid();
 
   return (
     <UserContext.Provider
@@ -29,6 +23,8 @@ export const UserProvider = ({ children }) => {
         setMensaje,
         handleSubmit,
         handlepresupuesto,
+        isValidPresupuesto, 
+        setIsValidPresupuesto
       }}
     >
       {children}
