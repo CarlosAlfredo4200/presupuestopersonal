@@ -1,7 +1,7 @@
 import React from 'react'
 import NuevoPresupuesto from './NuevoPresupuesto'
 
-const Header = ({presupuesto,setPresupuesto, handlepresupuesto}) => {
+const Header = ({presupuesto,setPresupuesto,handlepresupuesto, handleSubmit, mensaje}) => {
 
      
   return (
@@ -11,6 +11,8 @@ const Header = ({presupuesto,setPresupuesto, handlepresupuesto}) => {
              presupuesto ={presupuesto} 
              setPresupuesto={setPresupuesto}
              handlepresupuesto={handlepresupuesto}
+             handleSubmit={handleSubmit}
+             mensaje={mensaje}
         />
     </header>
   )
