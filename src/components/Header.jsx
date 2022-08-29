@@ -1,21 +1,13 @@
-import React from 'react'
-import NuevoPresupuesto from './NuevoPresupuesto'
+import React from "react";
+import NuevoPresupuesto from "./NuevoPresupuesto";
 
-const Header = ({presupuesto,setPresupuesto,handlepresupuesto, handleSubmit, mensaje}) => {
-
-     
+const Header = () => {
   return (
     <header>
-        <h1>Control de presupuesto</h1>
-        <NuevoPresupuesto
-             presupuesto ={presupuesto} 
-             setPresupuesto={setPresupuesto}
-             handlepresupuesto={handlepresupuesto}
-             handleSubmit={handleSubmit}
-             mensaje={mensaje}
-        />
+      <h1>Control de presupuesto</h1>
+      <NuevoPresupuesto />
     </header>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
