@@ -10,9 +10,12 @@ export const UserProvider = ({ children }) => {
         mensaje,
         setMensaje,
         handleSubmit,
-        handlepresupuesto,} = useForm();
+        handlepresupuesto,
+       isValidPresupuesto, setIsValidPresupuesto
+    
+    } = useForm();
 
-    const { isValidPresupuesto, setIsValidPresupuesto} = useIsValid();
+    
 
   return (
     <UserContext.Provider

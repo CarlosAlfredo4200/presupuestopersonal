@@ -7,6 +7,7 @@ export const useForm = ( initialValue = 0) => {
     const [mensaje, setMensaje] = useState("");
     
     const {isValidPresupuesto, setIsValidPresupuesto} = useIsValid();
+    
      
     const handlepresupuesto = (e) => {
       e.preventDefault();
@@ -17,7 +18,7 @@ export const useForm = ( initialValue = 0) => {
       e.preventDefault();
   
       if (!presupuesto || presupuesto < 0) {
-        setMensaje("No es un presupuesto valido");
+        setMensaje("No es un presupuesto valido!!!");
         return;
       }
       setMensaje("");
