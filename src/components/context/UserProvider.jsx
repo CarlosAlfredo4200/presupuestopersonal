@@ -1,20 +1,26 @@
  
 import { useForm } from "../hooks/useForm";
-import { useIsValid } from "../hooks/useIsValid";
+import { useModal } from "../hooks/useModal";
+ 
+
 import { UserContext } from "./UserContext";
 
+
 export const UserProvider = ({ children }) => {
-
-    const {presupuesto,
-        setPresupuesto,
-        mensaje,
-        setMensaje,
-        handleSubmit,
-        handlepresupuesto,
-       isValidPresupuesto, setIsValidPresupuesto
+  
+  const {presupuesto,
+    setPresupuesto,
+    mensaje,
+    setMensaje,
+    handleSubmit,
+    handlepresupuesto,
+    isValidPresupuesto, 
+    setIsValidPresupuesto,
     
-    } = useForm();
-
+    
+  } = useForm();
+  
+  const {modal, setModal} = useModal();
     
 
   return (
@@ -27,7 +33,12 @@ export const UserProvider = ({ children }) => {
         handleSubmit,
         handlepresupuesto,
         isValidPresupuesto, 
-        setIsValidPresupuesto
+        setIsValidPresupuesto,
+        modal,
+        setModal
+        
+        
+        
       }}
     >
       {children}

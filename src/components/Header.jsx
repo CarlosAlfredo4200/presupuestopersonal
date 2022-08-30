@@ -11,7 +11,10 @@ const Header = () => {
       <h1>Control de presupuesto</h1>
 
       {isValidPresupuesto ? <ControlPresupuesto /> : <NuevoPresupuesto />}
+      
     </header>
+
+    
   );
 };
 
