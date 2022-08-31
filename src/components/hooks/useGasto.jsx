@@ -8,11 +8,12 @@ export const useGasto = () => {
     const [gastos, setGastos] = useState([])
 
     const guardarGasto = (gasto) => {
+        gasto.fecha = Date.now();
         gasto.id = GeneradorId()
        setGastos([...gastos, gasto])
 
       
-       console.log(gasto);
+        
     }
 
   return  {  guardarGasto, gastos, setGastos }

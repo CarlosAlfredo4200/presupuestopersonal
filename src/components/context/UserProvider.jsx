@@ -22,7 +22,7 @@ export const UserProvider = ({ children }) => {
   } = useForm();
   
 const { modal, setModal, handleOcultarModal, handleNuevoGasto, animarModal, setAnimarModal} = useModal();
-const {  guardarGasto} = useGasto();
+const {  guardarGasto, gastos} = useGasto();
   return (
     <UserContext.Provider
       value={{
@@ -40,7 +40,8 @@ const {  guardarGasto} = useGasto();
         handleNuevoGasto,
         animarModal,
         setAnimarModal,
-        guardarGasto
+        guardarGasto,
+        gastos
         
       }}
     >
