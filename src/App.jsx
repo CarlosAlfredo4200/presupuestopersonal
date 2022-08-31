@@ -8,14 +8,9 @@ import IconoNuevoGasto from './img/nuevo-gasto.svg'
 
  
 function App() {
+   
   
-  const {isValidPresupuesto, modal, setModal} = useContext(UserContext);
-  
-  const handleNuevoGasto = () => {
-    setModal(true)
-  }
-
-
+  const {isValidPresupuesto, modal, setModal, handleNuevoGasto } = useContext(UserContext);
   
   return (
    
@@ -24,17 +19,13 @@ function App() {
 
         {isValidPresupuesto && (
 
-
           <div className="nuevo-gasto">
                 <img  src={IconoNuevoGasto} alt='Nuevo gasto' onClick={handleNuevoGasto}/>
             </div>
           )}
 
-          { modal && <Modal setModal={setModal} />}
+          { modal && <Modal />}
       </div>
-
-      
-    
   );
 }
 

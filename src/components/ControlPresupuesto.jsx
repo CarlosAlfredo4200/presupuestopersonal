@@ -7,7 +7,7 @@ import IconoNuevoGasto from '../img/nuevo-gasto.svg'
 
 const ControlPresupuesto = () => {
 
-    const [modal, setModal] = useState(false)
+    
 
      
     const {presupuesto  } = useContext(UserContext);
