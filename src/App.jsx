@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import "./App.css";
 import { UserContext } from "./components/context/UserContext";
 import Header from "./components/Header";
+import ListadoGastos from "./components/ListadoGastos";
 import Modal from "./components/Modal";
 import IconoNuevoGasto from './img/nuevo-gasto.svg'
  
@@ -10,21 +11,28 @@ import IconoNuevoGasto from './img/nuevo-gasto.svg'
 function App() {
    
   
-  const {isValidPresupuesto, modal, setModal, handleNuevoGasto } = useContext(UserContext);
+  const {isValidPresupuesto, modal, handleNuevoGasto } = useContext(UserContext);
   
   return (
    
       <div className="App">
         <Header />
 
-        {isValidPresupuesto && (
+          {isValidPresupuesto && (
+          <>
 
+          <main>
+            <ListadoGastos />
+          </main>
           <div className="nuevo-gasto">
                 <img  src={IconoNuevoGasto} alt='Nuevo gasto' onClick={handleNuevoGasto}/>
             </div>
+          </>
           )}
 
           { modal && <Modal />}
+
+          
       </div>
   );
 }

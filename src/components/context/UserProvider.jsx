@@ -1,5 +1,6 @@
 import React, { useState} from 'react' 
 import { useForm } from "../hooks/useForm";
+import { useGasto } from '../hooks/useGasto';
 import { useModal } from '../hooks/useModal';
 import { UserContext } from "./UserContext";
 
@@ -21,7 +22,7 @@ export const UserProvider = ({ children }) => {
   } = useForm();
   
 const { modal, setModal, handleOcultarModal, handleNuevoGasto, animarModal, setAnimarModal} = useModal();
-
+const {  guardarGasto} = useGasto();
   return (
     <UserContext.Provider
       value={{
@@ -38,7 +39,9 @@ const { modal, setModal, handleOcultarModal, handleNuevoGasto, animarModal, setA
         handleOcultarModal,
         handleNuevoGasto,
         animarModal,
-        setAnimarModal
+        setAnimarModal,
+        guardarGasto
+        
       }}
     >
       {children}
