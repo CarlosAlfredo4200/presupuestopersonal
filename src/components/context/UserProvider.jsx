@@ -1,28 +1,34 @@
-import React, { useState} from 'react' 
+import React, { useState } from "react";
 import { useForm } from "../hooks/useForm";
-import { useGasto } from '../hooks/useGasto';
-import { useModal } from '../hooks/useModal';
+import { useGasto } from "../hooks/useGasto";
+import { useGastoEdit } from "../hooks/useGastoEdit";
+import { useModal } from "../hooks/useModal";
+
 import { UserContext } from "./UserContext";
 
-
 export const UserProvider = ({ children }) => {
-
-   
-  
-  const {presupuesto,
+  const {
+    presupuesto,
     setPresupuesto,
     mensaje,
     setMensaje,
     handleSubmit,
     handlepresupuesto,
-    isValidPresupuesto, 
+    isValidPresupuesto,
     setIsValidPresupuesto,
-    
-    
   } = useForm();
-  
-const { modal, setModal, handleOcultarModal, handleNuevoGasto, animarModal, setAnimarModal} = useModal();
-const {  guardarGasto, gastos} = useGasto();
+
+  const {
+    modal,
+    setModal,
+    handleOcultarModal,
+    handleNuevoGasto,
+    animarModal,
+    setAnimarModal,
+  } = useModal();
+
+  const { guardarGasto, gastos, setGastos   } = useGasto();
+  const {gastoEdit, setGastoEdit} = useGastoEdit();
   return (
     <UserContext.Provider
       value={{
@@ -32,17 +38,21 @@ const {  guardarGasto, gastos} = useGasto();
         setMensaje,
         handleSubmit,
         handlepresupuesto,
-        isValidPresupuesto, 
+        isValidPresupuesto,
         setIsValidPresupuesto,
-        modal, 
+        modal,
         setModal,
         handleOcultarModal,
         handleNuevoGasto,
         animarModal,
         setAnimarModal,
         guardarGasto,
-        gastos
-        
+        gastos,
+        setGastos,
+        gastoEdit,
+        setGastoEdit,
+       
+         
       }}
     >
       {children}

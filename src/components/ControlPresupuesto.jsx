@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useContext } from 'react'
 import { UserContext } from './context/UserContext'
 import IconoNuevoGasto from '../img/nuevo-gasto.svg'
@@ -7,10 +7,21 @@ import IconoNuevoGasto from '../img/nuevo-gasto.svg'
 
 const ControlPresupuesto = () => {
 
-    
+    const {presupuesto, gastos  } = useContext(UserContext);
+    const [disponible, setDisponible] = useState(0);
+    const [gastado, setGastado] = useState(0);
 
+    useEffect(() => {
+       const totalGastado = gastos.reduce((total, gasto) => gasto.cantidad + total, 0);
+       const totalDisponible = presupuesto - totalGastado;
+
+       setDisponible(totalDisponible)
+       setGastado(totalGastado);
+        
+    }, [gastos])
+    
+ 
      
-    const {presupuesto  } = useContext(UserContext);
 
     const formatearCantidad = ( cantidad ) => {
         return ( cantidad * 1).toLocaleString('en-US', {
@@ -32,11 +43,11 @@ const ControlPresupuesto = () => {
             </p>
 
             <p>
-                <span>Disponible: </span> {formatearCantidad(0)}
+                <span>Disponible: </span> {formatearCantidad(disponible)}
             </p>
 
             <p>
-                <span>Gastado: </span> {formatearCantidad(0)}
+                <span>Gastado: </span> {formatearCantidad(gastado)}
             </p>
 
             

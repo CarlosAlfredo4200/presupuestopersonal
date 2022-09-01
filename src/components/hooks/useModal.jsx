@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
+import { useGastoEdit } from './useGastoEdit';
 
 export const useModal = () => {
 
     const [modal, setModal] = useState(false);
     const [animarModal, setAnimarModal] = useState(false);
-
+    const {gastoEdit, setGastoEdit} = useGastoEdit();
+     
 
     const handleOcultarModal = () => {
         setAnimarModal(false);
@@ -16,8 +18,9 @@ export const useModal = () => {
     }
 
     const handleNuevoGasto = () => {
+       
+        
         setModal(true);
-
         setTimeout(() => {
             setAnimarModal(true);
         }, 500);
@@ -29,6 +32,9 @@ export const useModal = () => {
     handleOcultarModal,
     handleNuevoGasto,
     animarModal,
-    setAnimarModal
+    setAnimarModal,
+    setGastoEdit, 
+    gastoEdit
+    
   }
 }
