@@ -8,10 +8,11 @@ import "react-circular-progressbar/dist/styles.css"
 
 const ControlPresupuesto = () => {
 
-    const {presupuesto, gastos  } = useContext(UserContext);
+    const {presupuesto, gastos, filtro, gastoFiltrado, setGastoFiltrado, setGastos, setPresupuesto, setIsValidPresupuesto  } = useContext(UserContext);
     const [porcentaje, setPorcentaje] = useState(0);
     const [disponible, setDisponible] = useState(0);
     const [gastado, setGastado] = useState(0);
+    
 
     useEffect(() => {
        const totalGastado = gastos.reduce((total, gasto) => gasto.cantidad + total, 0);
@@ -40,19 +41,43 @@ const ControlPresupuesto = () => {
         })
     }
 
-    
     useEffect(() => {
-     localStorage.setItem('presupuesto', presupuesto ?? 0)
-    }, [presupuesto])
+        localStorage.setItem('presupuesto', presupuesto ?? 0)
+        
+      }, [presupuesto]);
+   
+
+    useEffect(() => {
+        localStorage.setItem('gastos', JSON.stringify(gastos) ?? []);
+    }, [gastos])
+    
+
+    useEffect(() => {
+            if(filtro){
+                const gastosfiltrados = gastos.filter( gastoFil => gastoFil.categoria === filtro );
+                setGastoFiltrado(gastosfiltrados);
+            }
+    }, [filtro])
+    
+
+    const handleResetApp = () => {
+            const resultado = confirm('¿Deseas reiniciar la App?');
+            if(resultado){
+                setGastos([]);
+                setPresupuesto('');
+                setIsValidPresupuesto(false);
+                
+            }
+    }
     
   return (
     <div className='contenedor-presupuesto contenedor sombra dos-columnas'>
         <div>
              <CircularProgressbar 
              styles={buildStyles({
-                pathColor:'#3b282f6',
+                pathColor: porcentaje > 100 ? 'red' : '#3b282f6',
                 trilColor:'#f5f5f5',
-                textColor:'blue'
+                textColor: porcentaje > 100 ? 'red' :'blue'
              })}
              value={porcentaje}
              text={`${porcentaje}% Gastado`}
@@ -60,11 +85,16 @@ const ControlPresupuesto = () => {
         </div>
 
         <div className="contenido-presupuesto">
+            <button 
+                className='reset-app'
+                type='button'
+                onClick={handleResetApp}    
+                >Reiniciar App</button>
             <p>
                 <span>Presupuesto: </span> {formatearCantidad(presupuesto)}
             </p>
 
-            <p>
+            <p className={`${disponible < 0 ? 'negativo' : ''}`}>
                 <span>Disponible: </span> {formatearCantidad(disponible)}
             </p>
 

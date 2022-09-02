@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useFiltros } from "../hooks/useFiltros";
 import { useForm } from "../hooks/useForm";
 import { useGasto } from "../hooks/useGasto";
 import { useGastoEdit } from "../hooks/useGastoEdit";
@@ -29,7 +30,9 @@ export const UserProvider = ({ children }) => {
 
   const { guardarGasto, gastos, setGastos,handleEliminarGasto, idEliminar, setIdEliminar   } = useGasto();
   const {gastoEdit, setGastoEdit} = useGastoEdit();
-
+   
+  const [filtro, setFiltro] = useState('');
+  const [gastoFiltrado, setGastoFiltrado] = useState([]);
    
   return (
     <UserContext.Provider
@@ -54,7 +57,11 @@ export const UserProvider = ({ children }) => {
         gastoEdit,
         setGastoEdit,
         handleEliminarGasto,
-        setIdEliminar
+        setIdEliminar,
+        filtro,
+        setFiltro,
+        gastoFiltrado,
+        setGastoFiltrado
        
          
       }}

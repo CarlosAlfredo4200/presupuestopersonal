@@ -5,7 +5,10 @@ export const useGasto = () => {
 
    
 
-    const [gastos, setGastos] = useState([]);
+    const [gastos, setGastos] = useState( 
+      localStorage.getItem('gastos') ? JSON.parse(localStorage.getItem('gastos')) : []
+);
+    
     const [idEliminar, setIdEliminar] = useState('')
 
     const guardarGasto = (gasto) => {

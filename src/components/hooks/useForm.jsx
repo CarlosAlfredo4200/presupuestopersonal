@@ -1,12 +1,12 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useIsValid } from './useIsValid';
 
 export const useForm = () => {
     
-    const [presupuesto, setPresupuesto] = useState( 
-      Number(localStorage.getItem('presupuesto' ?? 0))
-      );
+    const [presupuesto, setPresupuesto] = useState(
+        localStorage.getItem('presupuesto') ?? 0);
     const [mensaje, setMensaje] = useState("");
+
     
     const {isValidPresupuesto, setIsValidPresupuesto} = useIsValid();
     
@@ -28,9 +28,7 @@ export const useForm = () => {
     };
 
 
-
-
-
+  
 
   return  {
     presupuesto,
