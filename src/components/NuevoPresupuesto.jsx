@@ -15,7 +15,6 @@ const NuevoPresupuesto = () => {
           <input
             type="number"
             placeholder="Agregar presupuesto"
-            className="nuevo-presupuesto"
             value={presupuesto}
             onChange={handlepresupuesto}
           />
