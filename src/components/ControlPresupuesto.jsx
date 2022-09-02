@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react'
 import { useContext } from 'react'
 import { UserContext } from './context/UserContext'
-import IconoNuevoGasto from '../img/nuevo-gasto.svg'
  
-
+ 
+import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
+import "react-circular-progressbar/dist/styles.css"
 
 const ControlPresupuesto = () => {
 
     const {presupuesto, gastos  } = useContext(UserContext);
+    const [porcentaje, setPorcentaje] = useState(0);
     const [disponible, setDisponible] = useState(0);
     const [gastado, setGastado] = useState(0);
 
@@ -15,8 +17,16 @@ const ControlPresupuesto = () => {
        const totalGastado = gastos.reduce((total, gasto) => gasto.cantidad + total, 0);
        const totalDisponible = presupuesto - totalGastado;
 
+       //Calcular porcentajes grafica
+
+       const nuevoPorcentaje = (((presupuesto - totalDisponible)/ presupuesto) * 100).toFixed(2);
        setDisponible(totalDisponible)
        setGastado(totalGastado);
+       
+       setTimeout(() => {
+           setPorcentaje(nuevoPorcentaje)
+        
+       }, 1000);
         
     }, [gastos])
     
@@ -31,10 +41,22 @@ const ControlPresupuesto = () => {
     }
 
     
+    useEffect(() => {
+     localStorage.setItem('presupuesto', presupuesto ?? 0)
+    }, [presupuesto])
+    
   return (
     <div className='contenedor-presupuesto contenedor sombra dos-columnas'>
         <div>
-            <p>Graficas</p>
+             <CircularProgressbar 
+             styles={buildStyles({
+                pathColor:'#3b282f6',
+                trilColor:'#f5f5f5',
+                textColor:'blue'
+             })}
+             value={porcentaje}
+             text={`${porcentaje}% Gastado`}
+             />
         </div>
 
         <div className="contenido-presupuesto">

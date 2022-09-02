@@ -1,9 +1,11 @@
 import React, { useState } from 'react'
 import { useIsValid } from './useIsValid';
 
-export const useForm = ( initialValue = 0) => {
+export const useForm = () => {
     
-    const [presupuesto, setPresupuesto] = useState( initialValue);
+    const [presupuesto, setPresupuesto] = useState( 
+      Number(localStorage.getItem('presupuesto' ?? 0))
+      );
     const [mensaje, setMensaje] = useState("");
     
     const {isValidPresupuesto, setIsValidPresupuesto} = useIsValid();

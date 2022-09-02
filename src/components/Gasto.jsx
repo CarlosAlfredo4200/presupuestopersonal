@@ -25,7 +25,7 @@ const diccionarioIconos = {
 
 const Gasto = ({ gast }) => {
   
-  const { setGastoEdit} = useContext(UserContext)
+  const { setGastoEdit,  setIdEliminar, gastos, setGastos} = useContext(UserContext)
   const { fecha } = gast;
 
 const handleEditarGasto = () => {
@@ -34,6 +34,12 @@ const handleEditarGasto = () => {
 }
 
  
+const handleEliminarGasto = () => {
+  const gastoSeleccionado = gastos.filter( gts => gts.id !== gast.id);
+ setGastos(gastoSeleccionado);
+
+  
+}
  
 
   return (
@@ -52,7 +58,7 @@ const handleEditarGasto = () => {
           </div>
           <p className="cantidad-gasto">$: {gast.cantidad}</p>
           <FaEdit onClick={handleEditarGasto} />  
-          <RiDeleteBin2Fill  className="icono1" />
+          <RiDeleteBin2Fill  className="icono1" onClick={handleEliminarGasto}/>
         </div>
     
   );

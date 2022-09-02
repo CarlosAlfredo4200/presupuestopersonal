@@ -1,13 +1,15 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import GeneradorId from '../helpers/GenerarId'
 
 export const useGasto = () => {
 
    
 
-    const [gastos, setGastos] = useState([])
+    const [gastos, setGastos] = useState([]);
+    const [idEliminar, setIdEliminar] = useState('')
 
     const guardarGasto = (gasto) => {
+
 
       if(gasto.id){
         const gastoActualizado = gastos.map( gastoState => gastoState.id === gasto.id ? gasto : gastoState);
@@ -18,10 +20,20 @@ export const useGasto = () => {
         gasto.id = GeneradorId()
         setGastos([...gastos, gasto])
       }
-
-      
-        
+  
     }
 
-  return  {  guardarGasto, gastos, setGastos }
+    const handleEliminarGasto = () => {
+      const gastoSeleccionado = gastos.filter( gts => gts.id !== idEliminar);
+     setGastos(gastoSeleccionado);
+    
+      
+    }
+
+   
+  
+     
+   
+
+  return  {  guardarGasto, gastos, setGastos, handleEliminarGasto, idEliminar, setIdEliminar }
 }

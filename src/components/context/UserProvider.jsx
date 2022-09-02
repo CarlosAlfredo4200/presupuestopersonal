@@ -27,8 +27,10 @@ export const UserProvider = ({ children }) => {
     setAnimarModal,
   } = useModal();
 
-  const { guardarGasto, gastos, setGastos   } = useGasto();
+  const { guardarGasto, gastos, setGastos,handleEliminarGasto, idEliminar, setIdEliminar   } = useGasto();
   const {gastoEdit, setGastoEdit} = useGastoEdit();
+
+   
   return (
     <UserContext.Provider
       value={{
@@ -51,6 +53,8 @@ export const UserProvider = ({ children }) => {
         setGastos,
         gastoEdit,
         setGastoEdit,
+        handleEliminarGasto,
+        setIdEliminar
        
          
       }}

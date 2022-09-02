@@ -10,7 +10,7 @@ export const useModal = () => {
 
     const handleOcultarModal = () => {
         setAnimarModal(false);
-
+        setGastoEdit({});
         setTimeout(() => {
             setModal(false);
             

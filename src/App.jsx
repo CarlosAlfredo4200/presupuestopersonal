@@ -7,7 +7,7 @@ import Modal from "./components/Modal";
 import IconoNuevoGasto from "./img/nuevo-gasto.svg";
 
 function App() {
-  const { isValidPresupuesto, modal, handleNuevoGasto, gastoEdit, setModal, setAnimarModal, gastos, setGastos } =
+  const { isValidPresupuesto, modal, handleNuevoGasto, gastoEdit, setModal, setAnimarModal,setIsValidPresupuesto } =
     useContext(UserContext);
 
   useEffect(() => {
@@ -18,11 +18,19 @@ function App() {
           setAnimarModal(true);
       }, 500);
     }
-    
+   
      
   }, [gastoEdit]);
 
-   
+  
+  useEffect(() => {
+    const presupuestoLS = Number(localStorage.getItem('presupuesto')) ?? 0;
+    if(presupuestoLS > 0){
+      setIsValidPresupuesto(true)
+    } 
+  }, [])
+  
+  
 
   return (
     <div className={modal ? "fijar" : ""}>
@@ -31,7 +39,7 @@ function App() {
       {isValidPresupuesto && (
         <>
           <main>
-            <ListadoGastos />
+            <ListadoGastos   />
           </main>
           <div className="nuevo-gasto">
             <img
