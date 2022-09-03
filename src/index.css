@@ -28,7 +28,7 @@ html {
 }
 
 h1 {
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 h2 {
     font-size: 1rem;
@@ -45,7 +45,7 @@ h2 {
 
 header {
     background: linear-gradient( 10deg, rgb(42, 38, 46), blue, rgb(2, 86, 119),  black);  
-    width: 100%;
+    width: 89%;
 }
 
  
@@ -83,32 +83,36 @@ header h1 {
  
 
 .formulario label {
-    color: var(--azul);
-    font-size: 2rem;
-    text-align: center;
+    color: var(--blanco);
+    font-size: 1rem;
     margin-bottom: 1rem;
 }
 
 .formulario input[type="text"],
 .formulario input[type="number"] {
-    background-color: rgba(86, 92, 102, 0.349);
-    border-radius: 1rem;
-     
-    padding: 1rem;
+    background-color: rgb(253, 253, 253);
+    border-radius: .5rem;
+    margin-top: .5rem;
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+    padding: .4rem;
     border: none;
     flex: 1;
      
 }
 .formulario input[type="submit"] {
-    background-color: #1048a4;
-    border: none;
-    padding: 1rem;
+    background-color: none;
+    border: 1 solid black;
+    border-radius: 8px;
+     
+    padding: .5rem;
     text-align: center;
-    margin-top: 2rem;
-    color: var(--blanco);
+    margin-top: 1rem;
+    color: var(--negro);
     font-weight: 900;
     text-transform: uppercase;
-    font-size: 1.9rem;
+    font-size: .8rem;
     width: 100%;
     transition: background-color 300ms ease;
 }
@@ -152,7 +156,7 @@ header h1 {
     width: 90%;
     max-width: 80rem;
     margin: 0 auto;
-    background-color: #dbdddf7e;
+    background-color: #7e80837e;
     border: 1px solid black;
     border-radius: 15px;
 }
