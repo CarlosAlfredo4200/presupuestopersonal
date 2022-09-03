@@ -54,7 +54,7 @@ header {
     text-align: center;
      
     margin-top: 0%;
-    margin-bottom: 10px;
+    margin-bottom: 50px;
 }
 
  
@@ -62,10 +62,11 @@ header {
 header h1 {
     padding: 3rem 0;
     margin: 0;
-    margin-bottom: 2rem;
+     
     color: var(--blanco);
     text-align: center;
     text-transform: uppercase;
+    line-height: 1;
 }
 
 .footermensaje{
@@ -107,7 +108,7 @@ header h1 {
 .formulario label {
     color: var(--blanco);
     font-size: 1rem;
-    margin-bottom: 1rem;
+    margin-top: 1rem;
 }
 
 .formulario input[type="text"],
@@ -115,10 +116,10 @@ header h1 {
     background-color: rgb(253, 253, 253);
     border-radius: .5rem;
     margin-top: .5rem;
-    width: 100%;
+    width: 70%;
     text-align: center;
-    font-size: 14   px;
-    padding: .4rem;
+    font-size: 16px;
+    padding: .5rem;
     border: none;
     flex: 1;
      
@@ -127,15 +128,18 @@ header h1 {
     background-color: none;
     border: 1 solid black;
     border-radius: 8px;
-     
-    padding: .5rem;
+    margin-left: 15%;
+    margin-right: 15%;
+    padding: 1rem ;
     text-align: center;
-    margin-top: 1rem;
+    margin-top: 20px;
     color: var(--negro);
     font-weight: 900;
     text-transform: uppercase;
-    font-size: .8rem;
-    width: 100%;
+    font-size: 16px;
+    width: 70%;
+
+     
     transition: background-color 300ms ease;
 }
 @media (min-width: 768px) {
@@ -331,7 +335,7 @@ main {
     align-items: left;
     gap: 1rem;
     width: 95%;
-    margin: 0 auto;
+    margin: 1rem auto;
     background-color: white;
     border: 1px solid black;
     padding: 2rem;
@@ -346,7 +350,7 @@ main {
 }
 
 .cantidad-gasto {
-    font-size: 1.3rem;
+    font-size: 1rem;
     color: var(--negro);
     font-weight: 900;
     
@@ -363,6 +367,7 @@ main {
     align-items: center;
     gap: 2rem;
     
+    
 }
 
 .contenido-gasto img {
@@ -374,26 +379,26 @@ main {
 }
 .categoria {
     color: var(--gris);
-    font-size: 1.6rem;
+    font-size: 1.2rem;
     font-weight: 900;
     text-transform: uppercase;
+    margin: 0;
 }
-.descripcion-gasto p {
-    margin-bottom: 1rem;
-}
+ 
 .descripcion-gasto .nombre-gasto {
     color:black;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: 700;
-    margin: 3px 0;
+    
 }
 .descripcion-gasto .nombre-gasto:hover {
     cursor: pointer;
 }
 .descripcion-gasto .fecha-gasto {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-weight: 900;
     color:blue;
+    
 }
 .descripcion-gasto .fecha-gasto span {
     font-weight: 400;
@@ -416,17 +421,19 @@ main {
 
 .modal {
     position: absolute;
-    background-color: rgb(0 0 0 / 0.92);
+    background-color: rgb(0 0 0 / 0.8);
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
 }
+
+ 
 .modal .cerrar-modal {
     position: absolute;
     right: 3rem;
-    top: 3rem;
-    width: 3rem;
+    top: 8rem;
+    width: 2rem;
     height: 3rem;
 }
 .modal .cerrar-modal img {
@@ -434,8 +441,8 @@ main {
 }
 
 .modal .formulario {
-    max-width: 80rem;
-    width: 40rem;
+     
+    width:95%;
     transition-property: all;
     transition-duration: 300ms;
     transition-timing-function: ease-in;
@@ -461,6 +468,10 @@ body .modal {
     text-align: left;
 }
 
+.modal legend{
+    font-size: 2rem;
+    margin-top: 3rem;
+}
  
 
 .CircularProgressbar .CircularProgressbar-text {

@@ -70,7 +70,7 @@ const Modal = () => {
         onSubmit={handleSubmit}
         className={`formulario ${animarModal ? "animar" : "cerrar"}`}
       >
-        <legend>{gastoEdit.nombre ? 'Editar Gasto' : 'Nuevo gasto'}</legend>
+        <legend className="titulo-modal">{gastoEdit.nombre ? 'Editar Gasto' : 'Nuevo gasto'}</legend>
         {mensaje && <Mensaje tipo="error">{mensaje}</Mensaje>}
 
         <div className="campo">
