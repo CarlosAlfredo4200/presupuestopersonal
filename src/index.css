@@ -282,9 +282,11 @@ main {
 }
 .filtros{
     
-    padding: 1rem ;
-    margin: 1rem;
+    padding: 0 1rem ;
+    margin: 1rem 1rem;
     background: none;
+    border: 1px solid rgb(219, 218, 218);
+    
 }
 
 .campo {
@@ -297,7 +299,7 @@ main {
 .filtros label {
     font-size: 1.3rem;
     font-weight: 500;
-    color: var(--blanco);
+     
 }
 .filtros select {
     flex: 1;
@@ -307,7 +309,7 @@ main {
     text-align: center;
     background: none;
     border: 1px solid rgba(255, 255, 255, 0.582);
-    color: rgba(255, 255, 255, 0.699);
+    
 
 }
 
@@ -351,10 +353,7 @@ main {
 }
 .header-gasto{
     display: flex;
-    gap: 1rem;
-    
-     
-    
+    gap: 1rem;  
 }
 
 .contenido-gasto {
@@ -367,7 +366,7 @@ main {
 }
 
 .contenido-gasto img {
-    width: 5rem;
+    width: 3rem;
 }
 
 .descripcion-gasto p {
@@ -403,13 +402,13 @@ main {
 
 .nuevo-gasto {
     position: fixed;
-    bottom: 25rem;
+    bottom: 15rem;
     right: .5rem;
     
 }
 
 .nuevo-gasto img {
-    width: 5rem;
+    width: 3.5rem;
 }
 .nuevo-gasto img:hover {
     cursor: pointer;
@@ -471,11 +470,15 @@ body .modal {
 }
 
  
-
+.iconoEdit{
+    font-size: 30px;
+    color: blue;
+    margin: 0;    
+}
 
 .iconoDelete{
-    font-size: 50px;
-    color: #042a67;
-    margin: 0;
-     
+    font-size: 40px;
+    color: #fc0404;
+    margin: 0;    
+
 }
