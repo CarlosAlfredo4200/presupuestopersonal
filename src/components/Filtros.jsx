@@ -6,10 +6,10 @@ const Filtros = () => {
 
     const { filtro, setFiltro} = useContext(UserContext)
   return (
-   <div className="filtros sombre contenedor">
+   <div className="filtros sombra ">
         <form >
             <div className="campo">
-                <label>Filtrar Gastos</label>
+                <label className='labelf'>Filtrar Gastos</label>
                     <select value={filtro} onChange={e => setFiltro(e.target.value)}>
                         <option value="">-- Todos los gastos --</option>
                         <option value="ahorro">Ahorros</option>

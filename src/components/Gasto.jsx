@@ -46,19 +46,33 @@ const handleEliminarGasto = () => {
     
       
         <div className="gasto sombra">
+
           <div className="contenido-gasto">
-            <img src={diccionarioIconos[gast.categoria]} alt="icono gasto" />
-            <div className="descripcion-gasto">
+
+            <div className="header-gasto">
+              <img src={diccionarioIconos[gast.categoria]} alt="icono gasto" />
               <p className="categoria">{gast.categoria}</p>
-              <p className="nombre-gasto">{gast.nombre}</p>
-              <p className="fecha-gasto">
-                Agregado el:{""} <span>{FormatFecha(fecha)}</span>
-              </p>
             </div>
+
+            
+            <div className="descripcion-gasto">
+
+              <div>
+                  <p className="nombre-gasto">{gast.nombre}</p>
+                  <p className="fecha-gasto">
+                   <span>{FormatFecha(fecha)}</span>
+                  </p>
+                 <p className="cantidad-gasto">Valor $: {gast.cantidad}</p>
+              </div>
+
+
+            </div>
+          </div >
+          <div className="edicion-gasto">
+
+          <FaEdit className="iconoEdit" onClick={handleEditarGasto} />  
+          <RiDeleteBin2Fill  className="iconoDelete" onClick={handleEliminarGasto}/>
           </div>
-          <p className="cantidad-gasto">$: {gast.cantidad}</p>
-          <FaEdit onClick={handleEditarGasto} />  
-          <RiDeleteBin2Fill  className="icono1" onClick={handleEliminarGasto}/>
         </div>
     
   );

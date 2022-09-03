@@ -223,7 +223,7 @@ header h1 {
 }
 
 .contenedor-presupuesto svg {
-    width: 6rem;
+    width: 7rem;
     margin: 0 auto;
 }
 
@@ -265,7 +265,7 @@ header h1 {
     transition-duration: 300ms;
 }
 p{
-    color: yellow;
+     
     font-size: 13px;
 }
 span{
@@ -277,31 +277,42 @@ span{
 }
 
 main {
-    padding-top: 10rem;
+    padding-top: .2rem;
+       
+}
+.filtros{
+    
+    padding: 1rem ;
+    margin: 1rem;
+    background: none;
 }
 
-.filtros .campo {
+.campo {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 2rem;
+    gap: 1rem;
+     
 }
 .filtros label {
-    font-size: 3rem;
-    font-weight: 900;
-    color: var(--gris-oscuro);
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: var(--blanco);
 }
 .filtros select {
     flex: 1;
-    padding: 1rem;
+    padding: 1rem 3rem;
     border: none;
     border-radius: 1rem;
     text-align: center;
-    background-color: var(--gris-claro);
+    background: none;
+    border: 1px solid rgba(255, 255, 255, 0.582);
+    color: rgba(255, 255, 255, 0.699);
+
 }
 
-.listado-gastos {
-    margin-top: 5rem;
-}
+
+ 
 .listado-gastos h2 {
     color: var(--gris-oscuro);
     font-weight: 900;
@@ -313,33 +324,56 @@ main {
 
 .gasto {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
+    align-items: left;
+    gap: 1rem;
+    width: 95%;
+    margin: 0 auto;
+    background-color: white;
+    border: 1px solid black;
+    padding: 2rem;
+}
+
+.edicion-gasto{
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
     align-items: center;
-    gap: 2rem;
-    margin-bottom: 2rem;
-    width: 100%;
+    justify-content: center;
 }
 
 .cantidad-gasto {
-    font-size: 2.4rem;
+    font-size: 1.3rem;
     color: var(--negro);
     font-weight: 900;
+    
+}
+.header-gasto{
+    display: flex;
+    gap: 1rem;
+    
+     
+    
 }
 
 .contenido-gasto {
+     
     display: flex;
+    flex-direction: column;
     align-items: center;
     gap: 2rem;
+    
 }
 
 .contenido-gasto img {
-    width: 10rem;
+    width: 5rem;
 }
 
 .descripcion-gasto p {
     margin: 0 0 0.3rem 0;
 }
-.descripcion-gasto .categoria {
+.categoria {
     color: var(--gris);
     font-size: 1.6rem;
     font-weight: 900;
@@ -349,26 +383,29 @@ main {
     margin-bottom: 1rem;
 }
 .descripcion-gasto .nombre-gasto {
-    color: var(--gris-oscuro);
-    font-size: 2.4rem;
+    color:black;
+    font-size: 1.5rem;
     font-weight: 700;
+    margin: 3px 0;
 }
 .descripcion-gasto .nombre-gasto:hover {
     cursor: pointer;
 }
 .descripcion-gasto .fecha-gasto {
-    font-size: 1.8rem;
+    font-size: 1.3rem;
     font-weight: 900;
-    color: var(--gris-oscuro);
+    color:blue;
 }
 .descripcion-gasto .fecha-gasto span {
     font-weight: 400;
+    color: black;
 }
 
 .nuevo-gasto {
     position: fixed;
-    bottom: 5rem;
-    right: 5rem;
+    bottom: 25rem;
+    right: .5rem;
+    
 }
 
 .nuevo-gasto img {
@@ -433,29 +470,12 @@ body .modal {
 
 }
 
-/*** SWIPE LIST OVERRIDES **/
-.swipe-action__leading {
-    background-color: var(--azul);
-    color: var(--blanco);
-    margin-bottom: 2rem;
-}
-
-.swipe-action__trailing {
-    background-color: #db2777;
-    margin-bottom: 2rem;
-    color: var(--blanco);
-}
-
-.swipeable-list .swipe-action {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2.4rem;
-    text-align: right;
-}
+ 
 
 
-.icono1{
-    font-size: 30px;
+.iconoDelete{
+    font-size: 50px;
     color: #042a67;
+    margin: 0;
+     
 }
