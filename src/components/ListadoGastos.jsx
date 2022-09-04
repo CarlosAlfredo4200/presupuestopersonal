@@ -26,7 +26,7 @@ const ListadoGastos = () => {
 
           ) : (
             <>
-            <h2>{gastos.length ? 'Gastos' :' No hay gastos aún'}</h2>
+            <h2 className='no-gastos'>{gastos.length ? 'Gastos' :' Aún NO tienes gastos!!!'}</h2>
              {   gastos.map( gast => (
                   <Gasto key = {gast.id} gast={gast} />
                  ))
