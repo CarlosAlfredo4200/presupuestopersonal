@@ -146,7 +146,6 @@ header h1 {
     text-align: center;
     font-size: 16px;
     padding: .5rem;
-    
     flex: 1;
      
 }
@@ -262,7 +261,7 @@ header h1 {
     max-width: 90rem;
     margin: 0 auto;
     height: 200px;
-    background-color: #7e80837e;
+    background-color: #ababac7e;
     border: 1px solid black;
     border-radius: 15px;
 
@@ -483,7 +482,7 @@ main {
     flex-direction: column;
     justify-content: space-between;
     align-items: left;
-    gap: 1rem;
+    gap: 2rem;
     width: 95%;
     margin: 1rem auto;
     background-color: white;
