@@ -79,13 +79,11 @@ header h1 {
 }
 
 
- 
-
-
-
 .formulario {     
     width: 98%;
     margin: 0 auto;
+    margin-top: 1rem;
+    border-radius: 15px;
 }
 @media (min-width: 768px) {
     .formulario {
@@ -99,7 +97,7 @@ header h1 {
     display: block;
     text-transform: uppercase;
     color: var(--blanco);
-    margin-bottom: 4rem;
+     
     padding-bottom: 1rem;
     border-bottom: 2px solid var(--azul);
 }
@@ -108,38 +106,37 @@ header h1 {
 .formulario label {
     color: var(--blanco);
     font-size: 1rem;
-    margin-top: 1rem;
+    margin-top: 2rem;
 }
 
 .formulario input[type="text"],
 .formulario input[type="number"] {
-    background-color: rgb(253, 253, 253);
+    background-color: transparent;
     border-radius: .5rem;
-    margin-top: .5rem;
+    border: 1 solid black;
     width: 70%;
     text-align: center;
     font-size: 16px;
     padding: .5rem;
-    border: none;
+    
     flex: 1;
      
 }
 .formulario input[type="submit"] {
-    background-color: none;
+    background-color: transparent;
     border: 1 solid black;
     border-radius: 8px;
     margin-left: 15%;
     margin-right: 15%;
-    padding: 1rem ;
+    padding: .8rem ;
+    margin-bottom: 1rem;
     text-align: center;
     margin-top: 20px;
-    color: var(--negro);
-    font-weight: 900;
+    color: var(--blanco);
+    font-weight: 600;
     text-transform: uppercase;
-    font-size: 16px;
+    font-size: 14px;
     width: 70%;
-
-     
     transition: background-color 300ms ease;
 }
 @media (min-width: 768px) {
@@ -155,11 +152,14 @@ header h1 {
 
 .formulario select {
     flex: 1;
-    padding: 1rem;
-    border: none;
-    border-radius: 1rem;
+    padding: .6rem 1rem ;
+    border: 1 solid rgba(255, 255, 255, 0.397);
+    border-radius: 6px;
     text-align: center;
-    background-color: var(--gris-claro);
+    font-size: 14px;
+    width: 70%;
+    color: white;
+    background-color: transparent;
 }
 
 .alerta {
@@ -196,7 +196,6 @@ header h1 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-     
     padding-bottom: 1rem;
 }
 
@@ -289,21 +288,21 @@ main {
     padding: 0 1rem ;
     margin: 1rem 1rem;
     background: none;
-    border: 1px solid rgb(219, 218, 218);
+    border: px solid rgb(219, 218, 218);
     
 }
 
 .campo {
+    margin-top: -1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
+    gap: 1.5rem;
      
 }
 .filtros label {
     font-size: 1.3rem;
     font-weight: 700;
-     
     padding-top: 1rem;
      
 }
@@ -393,6 +392,7 @@ main {
     color:black;
     font-size: 1.2rem;
     font-weight: 700;
+     
     
 }
 .descripcion-gasto .nombre-gasto:hover {
@@ -425,7 +425,7 @@ main {
 
 .modal {
     position: absolute;
-    background-color: rgb(0 0 0 / 0.8);
+    background-color: rgb(0 0 0 / 0.9);
     top: 0;
     left: 0;
     right: 0;
@@ -435,9 +435,9 @@ main {
  
 .modal .cerrar-modal {
     position: absolute;
-    right: 3rem;
-    top: 8rem;
-    width: 2rem;
+    right: 3.5rem;
+    top: 3.2rem;
+    width: 1.3rem;
     height: 3rem;
 }
 .modal .cerrar-modal img {
@@ -446,11 +446,16 @@ main {
 
 .modal .formulario {
      
-    width:95%;
+    width:80%;
+    border: 1px solid rgba(255, 255, 255, 0.274);
+    margin-left: 10%;
+    margin-right: 10%; 
     transition-property: all;
     transition-duration: 300ms;
     transition-timing-function: ease-in;
     opacity: 0;
+     
+    
 }
 .modal label {
     color: var(--blanco);
@@ -473,8 +478,8 @@ body .modal {
 }
 
 .modal legend{
-    font-size: 2rem;
-    margin-top: 3rem;
+    font-size: 1.5rem;
+    margin-top: 2rem;
 }
  
 
