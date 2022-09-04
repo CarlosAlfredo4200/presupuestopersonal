@@ -499,7 +499,7 @@ main {
     flex-direction: row;
     gap: 3rem;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
      
 }
 
@@ -512,7 +512,8 @@ main {
 }
 .header-gasto{
     display: flex;
-    gap: 1rem;  
+    gap: 2rem;
+    align-items: center;  
 }
 
 
