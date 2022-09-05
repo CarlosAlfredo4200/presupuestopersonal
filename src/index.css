@@ -43,6 +43,11 @@ h2 {
     border-radius: 1.2rem;
 }
 
+.title2{
+    text-align: center;
+     
+}
+
 header {
     background: linear-gradient( 10deg, rgb(42, 38, 46), blue, rgb(2, 86, 119),  black);  
     width: 100%;
@@ -52,9 +57,7 @@ header {
     color: white;
     font-size: 80px;
     text-align: center;
-     
-    margin-top: -35px;
-    margin-bottom: 65px;
+    margin-bottom: 10px;
 }
 
  
@@ -88,8 +91,9 @@ header h1 {
     }
 
     .icono-header{
-        font-size: 30px;
-        margin-bottom: 6rem;
+        font-size: 60px;
+        margin-top: 1rem;
+        
     }
 
     
@@ -97,7 +101,7 @@ header h1 {
          font-size: 25px; 
     }    
     .footermensaje{
-        margin-top: 6rem;
+        margin-top: 7rem;
 }
 }
 
@@ -175,7 +179,7 @@ header h1 {
         color: rgb(24, 23, 23);
         font-weight: 900;
         font-size: 18px;
-        color: white;
+         
     }
 
     .formulario input[type="text"],
@@ -195,9 +199,10 @@ header h1 {
         
     }
     .icono-header{
+        margin-top: 2rem;
         font-size: 80px;
-        margin-top: -55px;
-        margin-bottom: 72px;
+         
+        margin-bottom: 0px;
     }
 
       
@@ -205,7 +210,8 @@ header h1 {
         font-size: 25px; 
    }    
    .footermensaje{
-       margin-top: 10rem;
+       margin-top: 12rem;
+       
     }
     .formulario label {
         color: var(--blanco);
@@ -270,10 +276,12 @@ header h1 {
 
 @media (min-width: 768px){
     .contenedor{
-        width: 70%;
+        width: 60%;
         height: 200px;
        
     }
+   
+
 }
 
 @media (min-width: 1200px){
@@ -287,17 +295,32 @@ header h1 {
 
 .contenedor-presupuesto {
      
-    margin-top: -4rem;
-    padding: 1rem;
+    margin-top: 1rem;
+    padding: .5rem ;
+
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding-bottom: 1rem;    
+    
+}
+
+@media (min-width: 768px){
+    .contenedor-presupuesto {
+        margin-top: 1rem;
+        height: 250px;
+        padding: 1.5rem;
+        padding-bottom: 2rem;
+        
+     
+    }
 }
 
 @media (min-width: 1200px){
     .contenedor-presupuesto {
-        margin-top: -3rem;
+        margin-top: 2rem;
+        
+         
     }
 }
 
@@ -312,9 +335,10 @@ header h1 {
     .dos-columnas {
         flex-direction: row;
         align-items: center;
-        gap: 1rem;
+        gap: .5rem;
          
-        padding: 3rem 1rem ;
+         
+         
     }
     .dos-columnas > div {
         width: 50%;
@@ -766,7 +790,7 @@ body .modal {
  
 
 .CircularProgressbar .CircularProgressbar-text {
-    font-size: .7rem !important;
+    font-size: .6rem !important;
 }
 
  
@@ -787,13 +811,13 @@ body .modal {
     .dos-columnas {
         flex-direction: row;
         align-items: center;
-        gap: 1rem;
+        gap: 3rem;
         padding: 3rem;
         
     }
 
     .CircularProgressbar .CircularProgressbar-text {
-        font-size: .8rem !important;
+        font-size: .6rem !important;
          
     
     }

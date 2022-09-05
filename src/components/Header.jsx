@@ -4,14 +4,17 @@ import { UserContext } from "./context/UserContext";
 import ControlPresupuesto from "./ControlPresupuesto";
 import NuevoPresupuesto from "./NuevoPresupuesto";
 import { FcBullish } from "react-icons/fc" ;
+import Title2 from "./title2/Title2";
 
-FcBullish
+
 const Header = () => {
   const { isValidPresupuesto } = useContext(UserContext);
   return (
     <>
     <header>
-      <h1>Gestión de gastos</h1>
+      <div className="title2">
+      <Title2 />
+      </div>
       {!isValidPresupuesto && ( <div className="icono-header">
         <FcBullish />
       </div>)}
